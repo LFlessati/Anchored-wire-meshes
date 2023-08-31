@@ -7,26 +7,23 @@ The use of the model, only requiring the definition of geometry and soil-wire me
 
 ## Model description
 This meta-model follows a procedure similar to that used according to machine learning approaches, but the functions used to define the model were chosen by critically analysing and mechanically interpreting the local soil-wire mesh interaction processes, detected thanks to the performed FE numerical simulations. 
-The followed approach is inspired to the macro-element (ME) theory, commonly employed to analyse different soil-structure interaction problems, and stems from the idea of reproducing a complex system mechanical response via a low number of degrees of freedom and by defining a suitable incremental generalized/upscaled constitutive relationship between the static (in this case soil-retaining system interaction force $F$ and resultant wire mesh tensile force $T$) and kinematic (normal component of the far-field displacement $u_n$) variables associated with the chosen degrees of freedom. In this sense, the ME approach is an upscaling procedure analogous to the ones commonly adopted in structural engineering.
+The followed approach is inspired to the macro-element (ME) theory, commonly employed to analyse different soil-structure interaction problems, and stems from the idea of reproducing a complex system mechanical response via a low number of degrees of freedom and by defining a suitable incremental generalized/upscaled constitutive relationship between the static (in this case soil-retaining system interaction force $F$ and resultant wire mesh tensile force $T$) and kinematic (normal component of the far-field displacement $u$) variables associated with the chosen degrees of freedom. In this sense, the ME approach is an upscaling procedure analogous to the ones commonly adopted in structural engineering.
 The meta-model is inspired to standard load-displacement curves for shallow foundations (Butterfield, 1980) and the wire mesh presence is taken into account by suitably modifying the bearing capacity formula (Vesic, 1975). The derived differential equations are integrated by using an explicit scheme: stability of the numerical scheme depends on the number of steps.
 As for model limitations,this ME model is conceived for isotropic wire meshes but, by using average stiffness and strength values, also anisotropic wire meshes can be considered. The wire mesh fragile failure is not accounted for but this is not a severe limitation of the model since in practical applications even the yielding of the mesh, developing before its failure, is not acceptable. The calculation tool refers to horizontal ground surfaces, but ad-hoc numerical results highlighted that the influence of slope inclination plays a minor role. Plate deformability is not accounted for but a simplified approach to analyse its response is suggested in Boschi et al. (2023). 
 
 ## Input parameters
-The input parameters refers to the geometry and soil/wire mesh mechanical properties. 
+The model use requires the definition of 10 input data concerning geometry, basic soil mechanical properties and wire mesh stiffness/strenght and an input variable ($u$), without requiring neither additional FE numerical analyses nor model calibration.
 The input parameters are named as it followed in the provided Python code:
-
-
-The tool is self-standing and its use only requires the definition of input data describing the geometry and basic wire mesh and soil mechanical properties.
-
-the model use requires the definition (i) of 9 input data (Table 3) concerning geometry (B and S), soil mechanical properties (E, ν, c', ϕ’, ψ and γ) and membrane stiffness (J) and (ii) an input variable (un). For this reason, the proposed model is “self-standing” since it does require neither additional FE numerical analyses nor model calibration.
-
-
-
-
-
-
-
-
+1. $B$ [m] plate width
+2. $S$ [m] plate spacing
+3. $E$ [kPa] soil Young modulus
+4. $nu$ [-] soil Poisson’s ratio
+5. $c$ [kPa] soil cohesion
+6. $phi$ [rad] soil friction angle
+7. $psi$ [rad] soil dilatancy angle
+8. $gam$ [kN/m$^3$] soil unit weight
+9. $J$ [kN/m] wire mesh tensile stiffness
+10. $ty$ [kN/m] wire mesh tensile strenght
 
 
 ## References
