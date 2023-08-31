@@ -1,7 +1,7 @@
 # Anchored-wire-meshes
 
 ## Introduction
-This code is the implementation of the meta-model introduced in Boschi et al. (2023) for analysing the response of anchored wire meshes, commonly adopted to stabilize potentially unstable soil slopes and employed either as active or a passive anchoring systems. 
+This code is the implementation of the meta-model introduced in Boschi et al. (2023) for analysing the response of anchored wire meshes, commonly adopted to stabilize potentially unstable soil slopes. 
 This model was conceived on the basis of the results of a series of 3D large displacement finite element numerical analyses, in which the wire mesh mechanical behaviour is modelled as either an elastic or an elastic-plastic membrane (Boschi et al., 2020; 2021). It is inspired to standard load-displacement curves for shallow foundations and the wire mesh presence is taken into account by suitably modifying the bearing capacity formula. The proposed model predictions was also validated thanks to the comparison with experimental punching test results. 
 The use of the model, only requiring the definition of geometry and soil-wire mesh mechanical properties, allows the pre-design of the reinforcement system without performing ad-hoc finite element numerical analyses. 
 
